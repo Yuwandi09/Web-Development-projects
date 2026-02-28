@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>comNumGuess</title>
+     <style>
+      body{
+         background-image: url("R.png");
+         text-align: center;
+         margin-top: 100px;
+         font-family: bold;
+         color: white;
+         font-size: 20px;
+      }
+         input{
+            height: 30px;
+            width: 200px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+         }
+         button{
+            margin-top: 5px;
+            height: 30px;
+            width: 150px;
+            font-size: 20px;
+            font-family:bold;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(52, 41, 204);
+            color: white;
+            cursor: pointer;
+         }
+         
+          button:hover{
+            background-color: rgb(52, 41, 204);
+            color: white;
+         }
+    </style>
+</head>
+
+<body>
+    <p>Enter a number(1-10)</p>
+    <input id="input">
+    <button id="btn">Guess</button> 
+
+    <script>
+
+        var comNo;
+
+        function computerNo(){
+             comNo=Math.floor(Math.random()*11); 
+        }
+
+        document.getElementById("btn").onclick=function(){
+            var userNo = document.getElementById("input").value;
+
+            computerNo();
+
+            var i=1;
+            for(i=1;comNo!=userNo;i++){
+                computerNo();
+            }
+            alert("I found it , I got it after "+i+" times");
+        }
+    </script>
+</body>
+
+</html>
